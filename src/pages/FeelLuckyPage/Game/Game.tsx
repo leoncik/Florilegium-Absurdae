@@ -1,16 +1,17 @@
 import { useState } from "react";
 import Card from "../Card/Card";
 import classes from "./Game.module.css";
+import { shuffle } from "../../../helpers/utils";
 
 export default function Game() {
     const cardValues = ["Alkan", "Chopin", "Bach"];
-    const shuffledCardValues = cardValues.sort(() => Math.random() - 0.5);
+    shuffle(cardValues);
     const displayedGameCards = Array.from({ length: cardValues.length * 2 });
 
     const [gameCardsLength, setGameCardsLength] = useState(
         displayedGameCards.length
     );
-    const [gameCardsValues, setGameCardsValues] = useState(shuffledCardValues);
+    const [gameCardsValues, setGameCardsValues] = useState(cardValues);
     const [nextCardValue, setNextCardValue] = useState("");
 
     return (
