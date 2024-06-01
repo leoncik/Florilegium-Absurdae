@@ -1,9 +1,10 @@
 import { useState } from "react";
 import classes from "./Card.module.css";
+import { ICard } from "../cards";
 
 interface CardProps {
-    gameCardsValue: string[];
-    setGameCardsValue: React.Dispatch<React.SetStateAction<string[]>>;
+    gameCardsValue: ICard[];
+    setGameCardsValue: React.Dispatch<React.SetStateAction<ICard[]>>;
     nextCardValue: string;
     setNextCardValue: React.Dispatch<React.SetStateAction<string>>;
     gameCardsLength: number;
@@ -19,6 +20,7 @@ export default function Card({
     setGameCardsLength,
 }: CardProps) {
     const [cardValue, setCardValue] = useState<string>();
+    const [cardImage, setCardImage] = useState<string>();
     const [hasBeenRevealed, setHasBeenRevealed] = useState(false);
 
     function handleClick() {
@@ -41,8 +43,9 @@ export default function Card({
 
             // The card is selected for the first time.
         } else {
-            setCardValue(gameCardsValue[0]);
-            setNextCardValue(gameCardsValue[0]);
+            setCardValue(gameCardsValue[0].value);
+            setCardImage(gameCardsValue[0].image);
+            setNextCardValue(gameCardsValue[0].value);
             const newGameCardsValue = gameCardsValue.slice(1);
             setGameCardsValue(newGameCardsValue);
             setGameCardsLength(gameCardsLength - 1);
@@ -52,6 +55,7 @@ export default function Card({
     return (
         <div className={classes.card} onClick={handleClick}>
             <p>{cardValue}</p>
+            <img src={cardImage} alt={cardValue} />
         </div>
     );
 }
