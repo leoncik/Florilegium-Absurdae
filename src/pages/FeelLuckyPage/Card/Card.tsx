@@ -3,27 +3,27 @@ import classes from "./Card.module.css";
 import { ICard } from "../cards";
 
 interface CardProps {
-    gameCardsValue: ICard[];
-    setGameCardsValue: React.Dispatch<React.SetStateAction<ICard[]>>;
-    nextCardValue: string;
-    setNextCardValue: React.Dispatch<React.SetStateAction<string>>;
+    gameCards: ICard[];
+    setGameCards: React.Dispatch<React.SetStateAction<ICard[]>>;
+    nextCard: ICard | null;
+    setNextCard: React.Dispatch<React.SetStateAction<ICard | null>>;
     gameCardsLength: number;
     setGameCardsLength: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function Card({
-    gameCardsValue,
-    setGameCardsValue,
-    nextCardValue,
-    setNextCardValue,
+    gameCards,
+    setGameCards,
+    nextCard,
+    setNextCard,
     gameCardsLength,
     setGameCardsLength,
 }: CardProps) {
-    const [cardValue, setCardValue] = useState<string>();
-    const [cardImage, setCardImage] = useState<string>();
+    const [currentCard, setCurrentCard] = useState<ICard>();
     const [hasBeenRevealed, setHasBeenRevealed] = useState(false);
 
     function handleClick() {
+        // All cards have been revealed.
         if (gameCardsLength === 0) {
             console.log("Game over.");
             return;
@@ -36,26 +36,25 @@ export default function Card({
         setHasBeenRevealed(true);
 
         // A card has already been selected.
-        if (nextCardValue) {
-            setCardValue(nextCardValue);
-            setNextCardValue("");
+        if (nextCard) {
+            setCurrentCard(nextCard);
+            setNextCard(null);
             setGameCardsLength(gameCardsLength - 1);
 
             // The card is selected for the first time.
         } else {
-            setCardValue(gameCardsValue[0].value);
-            setCardImage(gameCardsValue[0].image);
-            setNextCardValue(gameCardsValue[0].value);
-            const newGameCardsValue = gameCardsValue.slice(1);
-            setGameCardsValue(newGameCardsValue);
+            setCurrentCard(gameCards[0]);
+            setNextCard(gameCards[0]);
+            const newGameCardsValue = gameCards.slice(1);
+            setGameCards(newGameCardsValue);
             setGameCardsLength(gameCardsLength - 1);
         }
     }
 
     return (
         <div className={classes.card} onClick={handleClick}>
-            <p>{cardValue}</p>
-            <img src={cardImage} alt={cardValue} />
+            <p>{currentCard?.value}</p>
+            <img src={currentCard?.image} alt={currentCard?.value} />
         </div>
     );
 }

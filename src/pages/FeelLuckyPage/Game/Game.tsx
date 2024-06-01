@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "../Card/Card";
 import classes from "./Game.module.css";
 import { shuffle } from "../../../helpers/utils";
-import cards from "../cards";
+import cards, { ICard } from "../cards";
 
 export default function Game() {
     shuffle(cards);
@@ -11,8 +11,8 @@ export default function Game() {
     const [gameCardsLength, setGameCardsLength] = useState(
         displayedGameCards.length
     );
-    const [gameCardsValues, setGameCardsValues] = useState(cards);
-    const [nextCardValue, setNextCardValue] = useState("");
+    const [gameCards, setGameCards] = useState(cards);
+    const [nextCard, setNextCard] = useState<ICard | null>(null);
 
     return (
         <>
@@ -21,10 +21,10 @@ export default function Game() {
                 {displayedGameCards.map((_, index) => (
                     <Card
                         key={index}
-                        gameCardsValue={gameCardsValues}
-                        setGameCardsValue={setGameCardsValues}
-                        nextCardValue={nextCardValue}
-                        setNextCardValue={setNextCardValue}
+                        gameCards={gameCards}
+                        setGameCards={setGameCards}
+                        nextCard={nextCard}
+                        setNextCard={setNextCard}
                         gameCardsLength={gameCardsLength}
                         setGameCardsLength={setGameCardsLength}
                     />
