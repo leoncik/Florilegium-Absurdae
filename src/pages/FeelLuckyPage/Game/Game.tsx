@@ -4,12 +4,13 @@ import classes from "./Game.module.css";
 
 export default function Game() {
     const cardValues = ["Alkan", "Chopin", "Bach"];
+    const shuffledCardValues = cardValues.sort(() => Math.random() - 0.5);
     const displayedGameCards = Array.from({ length: cardValues.length * 2 });
 
     const [gameCardsLength, setGameCardsLength] = useState(
         displayedGameCards.length
     );
-    const [gameCardsValues, setGameCardsValues] = useState(cardValues);
+    const [gameCardsValues, setGameCardsValues] = useState(shuffledCardValues);
     const [nextCardValue, setNextCardValue] = useState("");
 
     return (
