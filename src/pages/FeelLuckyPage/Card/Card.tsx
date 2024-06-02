@@ -1,6 +1,8 @@
 import { useState } from "react";
 import classes from "./Card.module.css";
 import { ICard } from "../cards";
+import back from "../../../assets/feel-lucky/card-back.png";
+import { motion } from "framer-motion";
 
 interface CardProps {
     gameCards: ICard[];
@@ -52,9 +54,17 @@ export default function Card({
     }
 
     return (
-        <div className={classes.card} onClick={handleClick}>
-            <p>{currentCard?.value}</p>
-            <img src={currentCard?.image} alt={currentCard?.value} />
-        </div>
+        <motion.div
+            className={classes.card}
+            onClick={handleClick}
+            whileHover={{ scale: 1.1 }}
+        >
+            <div className={classes.back}>
+                <img src={back} alt="Back of a card." />
+            </div>
+            <div className={classes.front}>
+                <img src={currentCard?.image} alt={currentCard?.value} />
+            </div>
+        </motion.div>
     );
 }
