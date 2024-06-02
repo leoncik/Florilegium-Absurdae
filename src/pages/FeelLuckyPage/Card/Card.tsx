@@ -53,11 +53,23 @@ export default function Card({
         }
     }
 
+    const spring = {
+        type: "spring",
+        stiffness: 300,
+        damping: 40,
+    };
+
     return (
         <motion.div
             className={classes.card}
             onClick={handleClick}
             whileHover={{ scale: 1.1 }}
+            // Normal transition
+            transition={spring}
+            // Slower transition for debugging
+            // transition={{duration: 0.9}}
+            initial={{ rotateY: 180 }}
+            animate={{ rotateY: hasBeenRevealed ? 0 : 180 }}
         >
             <div className={classes.back}>
                 <img src={back} alt="Back of a card." />
