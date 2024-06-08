@@ -1,3 +1,7 @@
+.card-wrapper {
+    perspective: 1000px;
+}
+
 .card {
     border-radius: 5px;
     padding: 16px;
@@ -5,6 +9,7 @@
     width: 64px;
     height: 128px;
     position: relative;
+    transform-style: preserve-3d;
 }
 
 .front,
@@ -14,6 +19,11 @@
     left: 0;
     width: 100%;
     height: 100%;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
 }
 
 .card img {
