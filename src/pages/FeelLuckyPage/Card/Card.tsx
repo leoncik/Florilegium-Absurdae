@@ -63,7 +63,7 @@ export default function Card({
         <div className={classes["card-wrapper"]}>
             <motion.div
                 className={classes.card}
-                onClick={handleClick}
+                onMouseDown={handleClick}
                 whileHover={{ scale: 1.1 }}
                 // Normal transition
                 transition={spring}
