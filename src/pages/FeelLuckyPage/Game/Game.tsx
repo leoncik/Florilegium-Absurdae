@@ -25,6 +25,7 @@ export default function Game() {
         confettiRef.current = new JSConfetti({ canvas });
     }, []);
 
+    // Triggers some cool stuff when the game is won.
     useEffect(() => {
         if (gameCardsLength === 0 && confettiRef.current) {
             console.log("You win!");
