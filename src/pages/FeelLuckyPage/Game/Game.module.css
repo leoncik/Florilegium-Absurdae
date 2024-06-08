@@ -1,6 +1,5 @@
 .board {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     margin-top: 42px;
 }
