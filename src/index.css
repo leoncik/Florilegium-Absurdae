@@ -1,3 +1,13 @@
+/* modern-antiqua-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Modern Antiqua";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/modern-antiqua-v24-latin/modern-antiqua-v24-latin-regular.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 *,
 *::before,
 *::after {
@@ -5,5 +15,10 @@
 }
 
 body {
+    color: black;
     margin: 0;
+    filter: sepia(1);
+    background-color: #f4ecd8;
+    height: 100vh;
+    font-family: "Modern Antiqua", "Courier New", Courier, monospace;
 }
