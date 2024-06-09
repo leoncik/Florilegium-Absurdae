@@ -1,6 +1,6 @@
 .board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     margin-top: 42px;
 }
 
@@ -12,4 +12,16 @@
     left: 0;
     z-index: 0;
     pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+    .board {
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .board {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

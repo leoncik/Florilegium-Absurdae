@@ -45,3 +45,9 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        width: auto;
+    }
+}

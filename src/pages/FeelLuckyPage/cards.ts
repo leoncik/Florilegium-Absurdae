@@ -1,6 +1,4 @@
 import dice from "../../assets/feel-lucky/dice-six.avif";
-import trefle from "../../assets/feel-lucky/trefle.avif";
-import horseshoe from "../../assets/feel-lucky/horseshoe.avif";
 import seven from "../../assets/feel-lucky/seven.svg";
 import amanita from "../../assets/feel-lucky/amanita.avif";
 import ladybird from "../../assets/feel-lucky/ladybird.avif";
@@ -19,14 +17,6 @@ const cards: ICard[] = [
     {
         image: dice,
         value: "Dice",
-    },
-    {
-        image: trefle,
-        value: "Trefle",
-    },
-    {
-        image: horseshoe,
-        value: "Horseshoe",
     },
     {
         image: seven,
