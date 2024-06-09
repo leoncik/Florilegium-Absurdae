@@ -1,6 +1,7 @@
 import classes from "./HomePage.module.css";
 import { pages } from "./pages";
 import HomeCard from "./HomeCard/HomeCard";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -16,6 +17,9 @@ export default function HomePage() {
                         />
                     ))}
                 </div>
+                <Link to={"/options"} className={classes.options}>
+                    Options
+                </Link>
             </div>
         </div>
     );

@@ -9,3 +9,12 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 36px;
 }
+
+.options {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-color: gainsboro;
+}
