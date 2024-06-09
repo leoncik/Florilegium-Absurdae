@@ -13,6 +13,18 @@ interface CardProps {
     setGameCardsLength: React.Dispatch<React.SetStateAction<number>>;
 }
 
+const cradleAnimation = {
+    cradle: {
+        rotate: [0, 15, -15, 15, -15, 0],
+        rotateY: [0, 180, 360],
+        transition: {
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+        },
+    },
+};
+
 export default function Card({
     gameCards,
     setGameCards,
@@ -70,7 +82,11 @@ export default function Card({
                 // Slower transition for debugging
                 // transition={{duration: 0.9}}
                 initial={{ rotateY: 180 }}
-                animate={{ rotateY: hasBeenRevealed ? 0 : 180 }}
+                animate={
+                    gameCardsLength === 0
+                        ? cradleAnimation.cradle
+                        : { rotateY: hasBeenRevealed ? 0 : 180 }
+                }
             >
                 <div className={classes.back}>
                     <img src={back} alt="Back of a card." />
