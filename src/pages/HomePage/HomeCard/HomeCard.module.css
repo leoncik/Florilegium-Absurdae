@@ -1,0 +1,9 @@
+.wrapper {
+    width: 250px;
+    height: 250px;
+    background-position: center;
+}
+
+.text {
+    text-align: center;
+}

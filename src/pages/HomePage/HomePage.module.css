@@ -3,3 +3,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.pages-wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 36px;
+}
