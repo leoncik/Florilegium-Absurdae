@@ -4,6 +4,7 @@ import classes from "./Game.module.css";
 import { shuffle } from "../../../helpers/utils";
 import cards, { ICard } from "../cards";
 import JSConfetti from "js-confetti";
+import SuccessMessage from "../SuccessMessage/SuccessMessage";
 
 export default function Game() {
     shuffle(cards);
@@ -39,7 +40,7 @@ export default function Game() {
 
     return (
         <>
-            <div>{gameCardsLength === 0 && "SUCCESS"}</div>
+            <div>{gameCardsLength === 0 && <SuccessMessage />}</div>
             <div className={classes.board}>
                 {displayedGameCards.map((_, index) => (
                     <Card
