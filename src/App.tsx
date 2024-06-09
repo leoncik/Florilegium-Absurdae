@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     },
     {
         path: "home",
-        element: <HomePage />,
+        element: <Layout PageContent={<HomePage />} />,
     },
     {
         path: "feel-lucky",

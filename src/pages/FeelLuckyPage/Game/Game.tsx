@@ -40,6 +40,9 @@ export default function Game() {
 
     return (
         <>
+            <p>
+                Number of clicks: {displayedGameCards.length - gameCardsLength}{" "}
+            </p>
             <div>{gameCardsLength === 0 && <SuccessMessage />}</div>
             <div className={classes.board}>
                 {displayedGameCards.map((_, index) => (
