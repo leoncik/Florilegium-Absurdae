@@ -11,6 +11,7 @@ export default function HomePage() {
                 <div className={classes["pages-wrapper"]}>
                     {pages.map((page) => (
                         <HomeCard
+                            key={page.text}
                             url={page.url}
                             image={page.image}
                             text={page.text}
