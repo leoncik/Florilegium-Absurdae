@@ -3,6 +3,8 @@ import { pages } from "./pages";
 import HomeCard from "./HomeCard/HomeCard";
 import { Link } from "react-router-dom";
 import useOptionsStore from "../../stores/optionsStore";
+import settings from "../../assets/home/settings.svg";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
     const currentTheme = useOptionsStore((state) => state.theme);
@@ -22,7 +24,18 @@ export default function HomePage() {
                     ))}
                 </div>
                 <Link to={"/options"} className={classes.options}>
-                    Options
+                    <div>
+                        <motion.img
+                            animate={{ rotate: 180 }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 2,
+                                ease: "linear",
+                            }}
+                            src={settings}
+                            alt="Options"
+                        />
+                    </div>
                 </Link>
             </div>
         </div>
