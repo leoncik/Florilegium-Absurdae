@@ -1,3 +1,13 @@
+:root {
+    --background: #f4ecd8;
+    --text-primary: black;
+}
+
+[data-theme="dark"] {
+    --background: black;
+    --text-primary: white;
+}
+
 /* fondamento-regular - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -19,10 +29,10 @@ h1 {
 }
 
 body {
-    color: black;
+    color: var(--text-primary);
     margin: 0;
     /* filter: sepia(1); */
-    background-color: #f4ecd8;
+    background-color: var(--background);
     height: 100vh;
     font-family: "Fondamento", "Courier New", Courier, monospace;
 }

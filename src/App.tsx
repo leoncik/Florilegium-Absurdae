@@ -5,6 +5,8 @@ import FrontispiecePage from "./pages/FrontispiecePage/FrontispiecePage";
 import Layout from "./components/Layout/Layout";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import OptionsPage from "./pages/OptionsPage/OptionsPage";
+import { useEffect } from "react";
+import useOptionsStore from "./stores/optionsStore";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +32,20 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+    const currentTheme = useOptionsStore((state) => state.theme);
+
+    // Apply on html tag a data-theme attribute on theme change
+    useEffect(() => {
+        const htmlTag = window.document.documentElement;
+        const currentlyAppliedTheme = htmlTag.getAttribute("data-theme");
+        // Set light theme by default
+        if (!currentlyAppliedTheme) {
+            htmlTag.setAttribute("data-theme", "light");
+        }
+        if (currentlyAppliedTheme !== currentTheme) {
+            htmlTag.setAttribute("data-theme", currentTheme);
+        }
+    }, [currentTheme]);
     return <RouterProvider router={router} />;
 }
 
