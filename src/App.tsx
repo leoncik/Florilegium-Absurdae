@@ -4,6 +4,7 @@ import FellLuckyPage from "./pages/FeelLuckyPage/FellLuckyPage";
 import FrontispiecePage from "./pages/FrontispiecePage/FrontispiecePage";
 import Layout from "./components/Layout/Layout";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import OptionsPage from "./pages/OptionsPage/OptionsPage";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     {
         path: "feel-lucky",
         element: <Layout PageContent={<FellLuckyPage />} />,
+    },
+    {
+        path: "options",
+        element: <Layout PageContent={<OptionsPage />} />,
     },
     {
         path: "*",
