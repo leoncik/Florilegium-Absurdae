@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import useOptionsStore from "../../stores/optionsStore";
 
 export default function OptionsPage() {
+    const setTheme = useOptionsStore((state) => state.setTheme);
+
     return (
         <div>
             <Link to="/home">Go back</Link>
@@ -9,13 +12,13 @@ export default function OptionsPage() {
             <div>
                 <ul>
                     <li>
-                        <button>Light</button>
+                        <button onClick={() => setTheme("light")}>Light</button>
                     </li>
                     <li>
-                        <button>Dark</button>
+                        <button onClick={() => setTheme("dark")}>Dark</button>
                     </li>
                     <li>
-                        <button>Retro</button>
+                        <button onClick={() => setTheme("retro")}>Retro</button>
                     </li>
                 </ul>
             </div>
