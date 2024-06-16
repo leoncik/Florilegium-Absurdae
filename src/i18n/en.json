@@ -1,9 +1,20 @@
 {
+    "general": {
+        "goBack": "Go back"
+    },
     "pages": {
         "feelLucky": "I feel lucky",
         "todoGame": "TODO-LIST: THE GAME"
     },
     "home": {
         "currentTheme": "Current theme:"
+    },
+    "options": {
+        "title": "Let's tweak some stuff :D",
+        "themeSelect": "Select your theme",
+        "light": "Light",
+        "dark": "Dark",
+        "retro": "Retro",
+        "languageSelect": "Select your language"
     }
 }

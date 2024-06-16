@@ -1,9 +1,20 @@
 {
+    "general": {
+        "goBack": "Retour"
+    },
     "pages": {
         "feelLucky": "J'ai de la chance",
         "todoGame": "TODO-LIST: LE JEU"
     },
     "home": {
         "currentTheme": "Thème actif :"
+    },
+    "options": {
+        "title": "Bidouillons les options :D",
+        "themeSelect": "Choisissez votre thème",
+        "light": "Clair",
+        "dark": "Sombre",
+        "retro": "Rétro",
+        "languageSelect": "Choisissez votre langue"
     }
 }
