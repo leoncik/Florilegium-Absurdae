@@ -1,0 +1,12 @@
+.wrapper {
+    --custom-stuff: red;
+}
+
+[data-theme="retro"] {
+    --custom-stuff: blue;
+}
+
+.wrapper p {
+    color: var(--custom-stuff);
+    background-color: var(--text-primary);
+}

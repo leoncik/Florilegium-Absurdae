@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import OptionsPage from "./pages/OptionsPage/OptionsPage";
 import { useEffect } from "react";
 import useOptionsStore from "./stores/optionsStore";
+import TodoGamePage from "./pages/TodoGamePage/TodoGamePage";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     {
         path: "feel-lucky",
         element: <Layout PageContent={<FellLuckyPage />} />,
+    },
+    {
+        path: "todo-the-game",
+        element: <Layout PageContent={<TodoGamePage />} />,
     },
     {
         path: "options",
