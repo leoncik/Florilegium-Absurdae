@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import useOptionsStore from "../../stores/optionsStore";
 import settings from "../../assets/home/settings.svg";
 import { motion } from "framer-motion";
-import { useT } from "talkr";
+import { useAutocompleteT } from "../../hooks/useAutocompleteT";
 
 export default function HomePage() {
     const currentTheme = useOptionsStore((state) => state.theme);
-    const { T } = useT();
+    const { T } = useAutocompleteT();
 
     return (
         <div className={classes.home}>
