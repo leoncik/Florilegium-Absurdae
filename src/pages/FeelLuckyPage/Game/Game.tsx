@@ -5,6 +5,7 @@ import { shuffle } from "../../../helpers/utils";
 import cards, { ICard } from "../cards";
 import JSConfetti from "js-confetti";
 import SuccessMessage from "../SuccessMessage/SuccessMessage";
+import { useAutocompleteT } from "../../../hooks/useAutocompleteT";
 
 export default function Game() {
     shuffle(cards);
@@ -38,10 +39,13 @@ export default function Game() {
         }
     }, [gameCardsLength]);
 
+    const { T } = useAutocompleteT();
+
     return (
         <>
             <p>
-                Number of clicks: {displayedGameCards.length - gameCardsLength}{" "}
+                {T("feelLucky.numberOfClicks")}{" "}
+                {displayedGameCards.length - gameCardsLength}{" "}
             </p>
             <div>{gameCardsLength === 0 && <SuccessMessage />}</div>
             <div className={classes.board}>

@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import Game from "./Game/Game";
+import { useAutocompleteT } from "../../hooks/useAutocompleteT";
 
 export default function FellLuckyPage() {
+    const { T } = useAutocompleteT();
+
     return (
         <div>
-            <h1>I feel lucky</h1>
-            <Link to="/home">Go back</Link>
-            <p>Find pairs in as few clicks as possible</p>
+            <h1>{T("feelLucky.title")}</h1>
+            <Link to="/home">{T("general.goBack")}</Link>
+            <p>{T("feelLucky.instructions")}</p>
             <Game />
         </div>
     );

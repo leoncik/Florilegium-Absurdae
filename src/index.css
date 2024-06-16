@@ -2,18 +2,21 @@
     --background: #f4ecd8;
     --text-primary: black;
     --font-family: "Fondamento", "Courier New", Courier, monospace;
+    --link: black;
 }
 
 [data-theme="dark"] {
     --background: black;
     --text-primary: white;
     --font-family: "Fondamento", "Courier New", Courier, monospace;
+    --link: white;
 }
 
 [data-theme="retro"] {
     --background: rgb(5, 58, 14);
     --text-primary: rgb(47, 255, 0);
     --font-family: "DotGothic16", "Courier New", Courier, monospace;
+    --link: rgb(0, 255, 242);
 }
 
 /* fondamento-regular - latin */
@@ -48,6 +51,10 @@
 
 h1 {
     font-weight: normal;
+}
+
+a {
+    color: var(--link);
 }
 
 body {

@@ -9,6 +9,11 @@
     "home": {
         "currentTheme": "Current theme:"
     },
+    "feelLucky": {
+        "title": "I feel lucky",
+        "instructions": "Find pairs in as few clicks as possible",
+        "numberOfClicks": "Number of clicks:"
+    },
     "options": {
         "title": "Let's tweak some stuff :D",
         "themeSelect": "Select your theme",
