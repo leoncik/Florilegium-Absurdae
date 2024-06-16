@@ -1,0 +1,7 @@
+.languages .active {
+    background-color: red;
+}
+
+.themes .active {
+    background-color: orange;
+}
