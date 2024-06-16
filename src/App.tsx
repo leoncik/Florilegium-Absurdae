@@ -8,6 +8,9 @@ import OptionsPage from "./pages/OptionsPage/OptionsPage";
 import { useEffect } from "react";
 import useOptionsStore from "./stores/optionsStore";
 import TodoGamePage from "./pages/TodoGamePage/TodoGamePage";
+import { Talkr } from "talkr";
+import en from "./i18n/en.json";
+import fr from "./i18n/fr.json";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +41,7 @@ const router = createBrowserRouter([
 
 function App() {
     const currentTheme = useOptionsStore((state) => state.theme);
+    const currentLanguage = useOptionsStore((state) => state.language);
 
     // Apply on html tag a data-theme attribute on theme change
     useEffect(() => {
@@ -51,7 +55,15 @@ function App() {
             htmlTag.setAttribute("data-theme", currentTheme);
         }
     }, [currentTheme]);
-    return <RouterProvider router={router} />;
+    return (
+        <Talkr
+            languages={{ en, fr }}
+            defaultLanguage={currentLanguage}
+            detectBrowserLanguage={currentLanguage ? false : true}
+        >
+            <RouterProvider router={router} />
+        </Talkr>
+    );
 }
 
 export default App;

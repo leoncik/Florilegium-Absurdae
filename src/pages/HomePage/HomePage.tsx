@@ -5,13 +5,17 @@ import { Link } from "react-router-dom";
 import useOptionsStore from "../../stores/optionsStore";
 import settings from "../../assets/home/settings.svg";
 import { motion } from "framer-motion";
+import { useT } from "talkr";
 
 export default function HomePage() {
     const currentTheme = useOptionsStore((state) => state.theme);
+    const { T } = useT();
+
     return (
         <div className={classes.home}>
             <div>
                 <h1>Florilegium Absurdae</h1>
+                <p>{T("test")}</p>
                 <p>Current theme: {currentTheme}</p>
                 <div className={classes["pages-wrapper"]}>
                     {pages.map((page) => (
