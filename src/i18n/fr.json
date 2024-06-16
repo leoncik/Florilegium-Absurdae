@@ -1,3 +1,9 @@
 {
-    "test": "Flattez-moi !"
+    "pages": {
+        "feelLucky": "J'ai de la chance",
+        "todoGame": "TODO-LIST: LE JEU"
+    },
+    "home": {
+        "currentTheme": "Thème actif :"
+    }
 }

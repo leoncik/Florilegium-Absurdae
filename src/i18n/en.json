@@ -1,3 +1,9 @@
 {
-    "test": "My tailor is rich!"
+    "pages": {
+        "feelLucky": "I feel lucky",
+        "todoGame": "TODO-LIST: THE GAME"
+    },
+    "home": {
+        "currentTheme": "Current theme:"
+    }
 }
